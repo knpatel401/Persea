@@ -48,8 +48,11 @@ Persea<br>
 	<div class="col-sm-1">
 	  <button type="submit" class="btn-primary" name="search">Search</button>
 	</div>
-	<div class="col-sm-6">
+	<div class="col-sm-1">
 	  <button type="submit" class="btn-primary" name="add">Add</button>
+	</div>
+	<div class="col-sm-5">
+	  {% block edit_view %}{% endblock %}
 	</div>
 	<div class="col-sm-1">
 	  <button type="checkbox" class="highlighter" name="highlight" >
@@ -62,22 +65,13 @@ Persea<br>
 	<div class="col-sm-4">
 	<b>Title:
 	<font color="darkblue">
-	{% if title[question_index] %}
-        {{ title[question_index] | safe }}
-        {% else %}
-        No search result found
-	{% endif %}
-	{{ form.title_query() }}
-	  
+	{% block title %}{% endblock %}
 	</font></b>
 	</div>
 	<div class="col-sm-5">
 	<b>Score:</b>
 	<font color="darkblue">
-	{% if score[question_index] %}
-        {{ score[question_index] }}
-        {% else %}
-        {% endif %}
+	{% block score %}{% endblock %}   
 	</font>
 	</div>
 	
@@ -86,23 +80,11 @@ Persea<br>
       <div class="row">
         <div class="col-sm-4">
 	<b>Question:</b>
-	<div id='question_box'>
-	{% if question[question_index] %}
-        {{ question[question_index] | safe }}
-        {% else %}
-        {% endif %}
-	</div>
+	{% block question %}{% endblock %}   
 	</div>
         <div class="col-sm-5">
 	  <b>Answer:</b>
-	<div id='answer_box'>
-	{% if answer[question_index] %}
-        {{ answer[question_index] | safe }}
-        {% else %}
-        {% endif %}
-          
-	  
-	</div>
+	{% block answer %}{% endblock %}   
 	</div>
 	<div class="row">
 	<div class="col-sm-3">

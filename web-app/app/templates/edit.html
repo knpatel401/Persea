@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+
+{% block edit_view %}
+  <button type="submit" class="btn-primary" name="view">View</button>
+{% endblock %}
+
+{% block title %}
+  {{ form.title_query() }}
+{% endblock %}
+
+{% block score %}
+  N/A
+{% endblock %}
+
+{% block question %}
+  {{ form.question_query(rows='19',cols='39') }}
+{% endblock %}
+
+{% block answer %}
+  {{ form.answer_query(rows='19',cols='50') }}
+{% endblock %}

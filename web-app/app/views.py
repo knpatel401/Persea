@@ -22,8 +22,10 @@ question_index = 0
 
 class SearchForm(Form):
     """Fields for Search"""
-    search_query = fields.StringField('Search Query:', validators=[Required()])
+    search_query = fields.StringField('Search Query:', validators=[])
     title_query = fields.StringField('', validators=[])
+    question_query = fields.TextAreaField('', validators=[])
+    answer_query = fields.TextAreaField('', validators=[])
 #    title_query = fields.TextAreaField('', validators=[])
     #answer_query = fields.StringField('', validators=[Required()])
     submit = fields.SubmitField('Submit')
@@ -97,10 +99,38 @@ def index():
             search_query = submitted_data['search_query']
             title,question,answer,score = lookup_search(search_query)
 
-
         if "add" in request.form:
-            title[question_index] = submitted_data['search_query']
-            #question = submitted_data['question_text']
+            title[question_index] = submitted_data['title_query']
+            question[question_index] = submitted_data['question_query']
+            answer[question_index] = submitted_data['answer_query']
+            # ADD CODE TO ADD TO DATABASE
+
+        if "view" in request.form:
+            print "VIEW"
+            if len(question) ==0:
+                title.append(submitted_data['title_query'])
+                question.append(submitted_data['question_query'])
+                answer.append(submitted_data['answer_query'])
+                
+            else:
+                title[question_index] = submitted_data['title_query']
+                question[question_index] = submitted_data['question_query']
+                answer[question_index] = submitted_data['answer_query']
+            highlight_state = "OFF"
+            return render_template('view.html', form=form, title=title, question=question, answer=answer, score=score, question_index=question_index,highlight_state=highlight_state)
+
+        if "edit" in request.form:
+            print "EDIT"
+            if len(question) > question_index:
+                form.title_query.process_data(submitted_data['search_query'])
+                form.question_query.process_data(question[question_index])
+                form.answer_query.process_data(answer[question_index])
+            if highlight_enabled:
+                highlight_state = "ON"
+            else:
+                highlight_state = "OFF"
+    
+            return render_template('edit.html', form=form, title=title_submit, question=question_submit, answer=answer_submit, score=score, question_index=question_index,highlight_state=highlight_state)
 
 
     # TODO: find a cleaner way to do this
@@ -146,4 +176,6 @@ def index():
         highlight_state = "OFF"
     print(score)
 
-    return render_template('index.html', form=form, title=title_submit, question=question_submit, answer=answer_submit, score=score, question_index=question_index,highlight_state=highlight_state)
+    print "SEARCH"
+
+    return render_template('search.html', form=form, title=title_submit, question=question_submit, answer=answer_submit, score=score, question_index=question_index,highlight_state=highlight_state)

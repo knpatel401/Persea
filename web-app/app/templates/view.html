@@ -1,0 +1,39 @@
+{% extends "index.html" %}
+
+{% block edit_view %}
+  <button type="submit" class="btn-primary" name="edit">Edit</button>
+{% endblock %}
+
+{% block title %}
+    {% if title[question_index] %}
+    {{ title[question_index] | safe }}
+    {% else %}
+    No search result found
+    {% endif %}
+{% endblock %}
+
+{% block score %}
+    {% if score[question_index] %}
+    {{ score[question_index] }}
+    {% else %}
+    {% endif %}
+{% endblock %}
+
+{% block question %}
+     <div id='question_box'>
+    {% if question[question_index] %}
+    {{ question[question_index] | safe }}
+    {% else %}
+    {% endif %}
+    </div>   
+{% endblock %}
+
+{% block answer %}
+    <div id='answer_box'>
+    {% if answer[question_index] %}
+    {{ answer[question_index] | safe }}
+    {% else %}
+    {% endif %}
+    </div>   
+{% endblock %}
+
