@@ -1,0 +1,54 @@
+.navbar a {
+    color: white;
+}
+.navbar a:hover {
+    color: black;
+}
+
+.navbar-my > li > a {
+    color: white !important;
+}
+
+
+.navbar-my > li > a:hover {
+    color: black !important;
+}
+div#center {
+    text-align: center;
+    width: 100%;
+    padding: 25px;
+ }
+
+div#robista {
+    margin: 0 auto;
+    display: block;
+    width: 400px;
+    height: 400px;
+    background: url(../images/robista.svg) no-repeat;
+}
+
+div#robista_chart {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    height: 800px;
+    background: url(../images/robista_chart.svg) no-repeat;
+}
+
+a.my_button {
+  font-size: 150%;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #FF7256;
+  color: white;
+  padding: 4px 8px 4px 8px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 5px;
+  border-top: 0px solid #CCCCCC;
+  border-right: 0px solid #333333;
+  border-bottom: 0px solid #333333;
+  border-left: -px solid #CCCCCC;
+}
+.my_button:hover {
+   background-color: #FFD700;
+}

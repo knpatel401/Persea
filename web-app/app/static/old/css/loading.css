@@ -1,0 +1,24 @@
+div#content {
+    display: none;
+}
+
+div#center {
+    text-align: center;
+    width: 100%;
+    padding: 25px;
+ }
+div#loading {
+    padding: 25px;
+    text-align: center;
+    display: block;
+    width: 170px;
+    height: 60px;
+    margin: 0 auto;
+    margin-left: 0 auto;
+    margin-right: 0 auto;
+    position: relative;
+    vertical-align: middle;
+    z-index: 1000;
+    background: url(../images/loadingimage.gif) no-repeat;
+    cursor: wait;
+    }

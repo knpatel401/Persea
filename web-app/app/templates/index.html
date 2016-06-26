@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Persea</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/my.css">
+
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/bootstrap-extras.js"></script>
+
+    
+  </head>
+    <body>
+      <div class="container">
+        
+  <body style="background-color:#ffcf83;">
+
+<section class="header">
+<div class="row">
+<div class="col-sm-1">
+  <img src="static/images/detective.png" alt="Detective" style="width:60px;height:103.5px;">
+</div>
+<div class="col-sm-3">
+ <h2 class="title">
+Persea<br>
+</h2>
+<p>
+<font color="gray"><i>A Personalized Search Engine</i></font>
+  </p>
+</div>
+</div>
+  </section>
+  <hr />
+
+   <div class="content">
+     <form method="POST">
+     {{ form.hidden_tag() }}
+      <div class="row">
+      <div class="col-sm-4">
+	  {{ form.search_query.label }} {{ form.search_query() }}
+	</div>  
+	<div class="col-sm-1">
+	  <button type="submit" class="btn-primary" name="search">Search</button>
+	</div>
+	<div class="col-sm-6">
+	  <button type="submit" class="btn-primary" name="add">Add</button>
+	</div>
+	<div class="col-sm-1">
+	  <button type="checkbox" class="highlighter" name="highlight" >
+	  </button>
+          <img src="static/images/highlighter.png" alt="highlighter" style="width:30px;height:30px;">
+	</div>
+      </div>
+      <!--/form-->
+      <div class="row">
+	<div class="col-sm-4">
+	<b>Title:
+	<font color="darkblue">
+	{% if title[question_index] %}
+        {{ title[question_index] | safe }}
+        {% else %}
+        No search result found
+	{% endif %}
+	{{ form.title_query() }}
+	  
+	</font></b>
+	</div>
+	<div class="col-sm-5">
+	<b>Score:</b>
+	<font color="darkblue">
+	{% if score[question_index] %}
+        {{ score[question_index] }}
+        {% else %}
+        {% endif %}
+	</font>
+	</div>
+	
+      </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+	<b>Question:</b>
+	<div id='question_box'>
+	{% if question[question_index] %}
+        {{ question[question_index] | safe }}
+        {% else %}
+        {% endif %}
+	</div>
+	</div>
+        <div class="col-sm-5">
+	  <b>Answer:</b>
+	<div id='answer_box'>
+	{% if answer[question_index] %}
+        {{ answer[question_index] | safe }}
+        {% else %}
+        {% endif %}
+          
+	  
+	</div>
+	</div>
+	<div class="row">
+	<div class="col-sm-3">
+	<b><u>Results List</u>
+	<br>  
+	<font color="darkblue">
+        <button type="submit" class="my_button text-left" name='0'>
+	{% if title[0] %}
+        {{ title[0] | safe }}
+	{% else %}
+	----  
+        {% endif %}
+	</button>
+
+	<button type="submit" class="my_button text-left" name='1'>
+	{% if title[1] %}
+        {{ title[1] | safe }}
+	{% else %}
+	----  
+        {% endif %}
+	
+	
+	</button>
+	  
+        <button type="submit" class="my_button text-left" name='2'>
+	{% if title[2] %}
+        {{ title[2] | safe}}
+	{% else %}
+	----  
+        {% endif %}
+	
+	
+	</button>
+
+	<button type="submit" class="my_button text-left" name='3'>
+	{% if title[3] %}
+        {{ title[3]  | safe }}
+	{% else %}
+	----  
+        {% endif %}
+	
+	
+	</button>
+
+	<button type="submit" class="my_button text-left" name='4'>
+	{% if title[4] %}
+        {{ title[4] | safe }}
+	{% else %}
+	----  
+        {% endif %}
+	
+	
+	</button>
+
+	<button type="submit" class="my_button text-left" name='5'>
+	{% if title[5] %}
+        {{ title[5] | safe }}
+	{% else %}
+	----  
+        {% endif %}
+	
+	
+	</button>
+	</font></b>
+	</div>
+
+	</div>
+
+	</form>
+	</div>
+
+      </div>
+      
+  <script type="text/javascript">
+
+  </script>
+
+    </body>
+</html>

@@ -1,0 +1,152 @@
+.navbar a {
+    color: white;
+}
+.navbar a:hover {
+    color: black;
+}
+
+.navbar-my > li > a {
+    color: white !important;
+}
+
+
+.navbar-my > li > a:hover {
+    color: black !important;
+}
+div#center {
+    text-align: center;
+    width: 100%;
+    padding: 25px;
+ }
+
+div#question_box {
+    padding-top: 5px;  
+    padding-bottom: 5px;  
+    padding-right: 5px;  
+    padding-left: 5px;  
+    border: 2px groove;  
+    border-color: gray;
+    /*border: 1px solid;*/
+    margin: 5 auto;
+    display: block;
+    width: 95%;
+    height: 400px;
+    text-align: left;
+    /*    background: url(../images/background.jpg) repeat;*/
+    background-color: #ffebcc;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 5px;
+    overflow: scroll;
+}
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(200,100,100,0.8); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(200,100,100,0.4); 
+}
+div#answer_box {
+    padding-top: 5px;  
+    padding-bottom: 5px;  
+    padding-right: 5px;  
+    padding-left: 5px;  
+    border: 2px groove;  
+    border-color: gray;
+    margin: 5 auto;
+    display: block;
+    width: 95%;
+    height: 400px;
+    text-align: left;
+    background-color: #ffebcc;
+    /*background: url(../images/robista.svg) repeat;*/
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 5px;
+    overflow: scroll;
+}
+
+div#title_box {
+    padding-top: 5px;  
+    padding-bottom: 5px;  
+    padding-right: 5px;  
+    padding-left: 5px;  
+    border: 2px groove;  
+    border-color: gray;
+    margin: 5 auto;
+    display: block;
+    width: 95%;
+    height: 40px;
+    text-align: left;
+    background-color: #ffebcc;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 5px;
+}
+
+mark {
+    background-color: lightgreen;
+    color: black;
+}
+
+div#robista_chart {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    height: 800px;
+    background: url(../images/robista_chart.svg) no-repeat;
+}
+
+a.my_button {
+  font-size: 100%;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: beige;
+  color: beige;
+  padding: 4px 8px 4px 8px;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  border-top: 0px solid #CCCCCC;
+  border-right: 0px solid #333333;
+  border-bottom: 0px solid #333333;
+  border-left: -px solid #CCCCCC;
+}
+.my_button:hover {
+   background-color: beige;
+}
+
+a.highlighter {
+  font-size: 100%;
+  font-weight: bold;
+  //text-decoration: none;
+  background: url(../images/highlighter.png)
+  //background-color: lightgreen;
+  //color: lightgreen;
+  //padding: 4px 8px 4px 8px;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  //border-top: 0px solid #CCCCCC;
+  //border-right: 0px solid #333333;
+  //border-bottom: 0px solid #333333;
+  //border-left: -px solid #CCCCCC;
+}
+.highlighter:hover {
+  //background-color: green;
+  //border-top: 0px solid #FCF0CC;
+  //border-right: 0px solid #33FF33;
+  //border-bottom: 0px solid #33FF33;
+  //border-left: 0px solid #FCF0CC;
+}
