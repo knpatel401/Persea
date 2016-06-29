@@ -15,7 +15,7 @@ dtm_lsa = np.load('models/dtm_lsa.npy')
 df_filtered = pd.read_pickle('models/df_filtered.pkl')
 
 from .views import *
-
+ 
 
 # Handle Bad Requests
 @app.errorhandler(404)

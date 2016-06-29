@@ -6,12 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+    <!--link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css"-->
+    <!--link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"-->
+
+    <!--link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css"-->
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+    <!--link rel="stylesheet" type="text/css" href="/static/css/main.css"-->
     <link rel="stylesheet" type="text/css" href="/static/css/my.css">
 
     <script src="/static/js/jquery.js"></script>
-    <script src="/static/js/bootstrap.min.js"></script>
+    <!--script src="/static/js/bootstrap.min.js"></script-->
     <script src="/static/js/bootstrap-extras.js"></script>
 
     
@@ -39,36 +43,37 @@ Persea<br>
   <hr />
 
    <div class="content">
-     <form method="POST">
+     <form id='search_form' method="POST">
      {{ form.hidden_tag() }}
       <div class="row">
       <div class="col-sm-4">
-	  {{ form.search_query.label }} {{ form.search_query() }}
+	{{ form.search_query.label }} {{ form.search_query() }}
+		  <button type="submit" class="btn-primary" name="search">Search</button>
+
 	</div>  
-	<div class="col-sm-1">
-	  <button type="submit" class="btn-primary" name="search">Search</button>
-	</div>
-	<div class="col-sm-1">
+	<div class="col-sm-7">
 	  <button type="submit" class="btn-primary" name="add">Add</button>
-	</div>
-	<div class="col-sm-5">
+	  &nbsp
 	  {% block edit_view %}{% endblock %}
 	</div>
 	<div class="col-sm-1">
-	  <button type="checkbox" class="highlighter" name="highlight" >
-	  </button>
+	  <input type="checkbox" name="highlight" {% if
+     highlight_state %}checked {% endif %} />
           <img src="static/images/highlighter.png" alt="highlighter" style="width:30px;height:30px;">
 	</div>
       </div>
       <!--/form-->
       <div class="row">
-	<div class="col-sm-4">
+	&nbsp
+	</div>
+      <div class="row">
+	<div class="col-sm-9">
 	<b>Title:
 	<font color="darkblue">
 	{% block title %}{% endblock %}
 	</font></b>
 	</div>
-	<div class="col-sm-5">
+	<div class="col-sm-3">
 	<b>Score:</b>
 	<font color="darkblue">
 	{% block score %}{% endblock %}   
@@ -78,76 +83,131 @@ Persea<br>
       </div>
       </div>
       <div class="row">
+	&nbsp
+      </div>
+      <div class="row">
         <div class="col-sm-4">
-	<b>Question:</b>
+	<b>Question:</b><br>
 	{% block question %}{% endblock %}   
 	</div>
         <div class="col-sm-5">
-	  <b>Answer:</b>
+	  <b>Answer:</b><br>
 	{% block answer %}{% endblock %}   
 	</div>
 	<div class="row">
 	<div class="col-sm-3">
-	<b><u>Results List</u>
+	<b>Results List
 	<br>  
 	<font color="darkblue">
         <button type="submit" class="my_button text-left" name='0'>
 	{% if title[0] %}
+	  {% if category[0] == "UserInput" %}
+	  <img src="static/images/P_image.png" alt="highlighter" style="width:22px;height:22px;">
+	  {% endif %}
         {{ title[0] | safe }}
 	{% else %}
 	----  
         {% endif %}
 	</button>
+	<br>  
 
 	<button type="submit" class="my_button text-left" name='1'>
 	{% if title[1] %}
+	  {% if category[1] == "UserInput" %}
+	  <img src="static/images/P_image.png" alt="highlighter" style="width:22px;height:22px;">
+	  {% endif %}
         {{ title[1] | safe }}
 	{% else %}
 	----  
         {% endif %}
-	
-	
 	</button>
+	<br>  
 	  
         <button type="submit" class="my_button text-left" name='2'>
 	{% if title[2] %}
+	  {% if category[2] == "UserInput" %}
+	  <img src="static/images/P_image.png" alt="highlighter" style="width:22px;height:22px;">
+	  {% endif %}
         {{ title[2] | safe}}
 	{% else %}
 	----  
         {% endif %}
-	
-	
 	</button>
+	<br>  
 
 	<button type="submit" class="my_button text-left" name='3'>
 	{% if title[3] %}
+	  {% if category[3] == "UserInput" %}
+	  <img src="static/images/P_image.png" alt="highlighter" style="width:22px;height:22px;">
+	  {% endif %}
         {{ title[3]  | safe }}
 	{% else %}
 	----  
         {% endif %}
-	
-	
 	</button>
+	<br>  
 
 	<button type="submit" class="my_button text-left" name='4'>
 	{% if title[4] %}
+	  {% if category[4] == "UserInput" %}
+	  <img src="static/images/P_image.png" alt="highlighter" style="width:22px;height:22px;">
+	  {% endif %}
         {{ title[4] | safe }}
 	{% else %}
 	----  
         {% endif %}
-	
-	
 	</button>
+	<br>  
 
 	<button type="submit" class="my_button text-left" name='5'>
 	{% if title[5] %}
+	  {% if category[5] == "UserInput" %}
+	  <img src="static/images/P_image.png" alt="highlighter" style="width:22px;height:22px;">
+	  {% endif %}
         {{ title[5] | safe }}
 	{% else %}
 	----  
         {% endif %}
-	
-	
 	</button>
+        <br>
+
+	<button type="submit" class="my_button text-left" name='6'>
+	{% if title[6] %}
+	  {% if category[6] == "UserInput" %}
+	  <img src="static/images/P_image.png" alt="highlighter" style="width:22px;height:22px;">
+	  {% endif %}
+        {{ title[6] | safe }}
+	{% else %}
+	----  
+        {% endif %}
+	</button>
+        <br>
+
+	<button type="submit" class="my_button text-left" name='7'>
+	{% if title[7] %}
+	  {% if category[7] == "UserInput" %}
+	  <img src="static/images/P_image.png" alt="highlighter" style="width:22px;height:22px;">
+	  {% endif %}
+        {{ title[7] | safe }}
+	{% else %}
+	----  
+        {% endif %}
+	</button>
+        <br>
+
+	<button type="submit" class="my_button text-left" name='8'>
+	{% if title[8] %}
+	  {% if category[8] == "UserInput" %}
+	  <img src="static/images/P_image.png" alt="highlighter" style="width:22px;height:22px;">
+	  {% endif %}
+        {{ title[8] | safe }}
+	{% else %}
+	----  
+        {% endif %}
+	</button>
+        <br>
+
+
 	</font></b>
 	</div>
 
@@ -159,7 +219,11 @@ Persea<br>
       </div>
       
   <script type="text/javascript">
-
+      $(document).ready(function() {
+        $('input[name="highlight"]').click(function() {
+          document.getElementById('search_form').submit();
+        });
+      });
   </script>
 
     </body>
