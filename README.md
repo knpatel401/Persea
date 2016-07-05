@@ -9,8 +9,8 @@ For this project, I decided to use a dump of [stackoverflow](http://stackoverflo
 Persea is a web app that allows the user to search and browse the stackoverflow database and add entries to a personal database that is searched in conjunction with the search of the stackoverflow database.  Currently the search engine is still in an early beta stage.
 
 Here's a screenshot of Persea:
-![alt text](https://github.com/knpatel401/Persea/images/persea.png "Persea Screenshot")
+![alt text](https://github.com/knpatel401/Persea/blob/master/images/persea.png "Persea Screenshot")
 
 Here's a block diagram of Persea:
-![alt text](https://github.com/knpatel401/Persea/images/block_diagram.png "Persea block diagram")
+![alt text](https://github.com/knpatel401/Persea/blob/master/images/block_diagram.png "Persea block diagram")
 
